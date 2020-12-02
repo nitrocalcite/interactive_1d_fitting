@@ -1,0 +1,5 @@
+lmfit~=1.0.1
+numpy~=1.19.0
+param~=1.9.3
+panel~=0.9.7
+bokeh~=2.2.3
