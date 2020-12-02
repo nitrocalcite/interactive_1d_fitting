@@ -40,6 +40,19 @@ This enables:
 * `pip install -r requirements.txt`
 * Have fun!
 
+At the moment, you may want to install my patched version of bokeh (see the tutorial).
+To do that:
+
+* `pip uninstall bokeh`
+* `git clone https://github.com/nitrocalcite/bokeh`
+* `git checkout --track origin/polyedit_patch_2.2`
+* `python setup.py develop`
+* When prompted, chose `2` to install the prebuilt BokehJS I've bundled in that branch.  footnote:[This is why the repo is so large, but means that you don't need to install the entire node-based JS build stack yourself]
+* Check to see if it worked by running `import bokeh; print(bokeh.+++__version__+++)`
+You should see something like `2.2.3-2-g29604b135-dirty`, _not_ `2.2.3`.
+If you see `2.2.3`, you may not have properly uninstalled the earlier copy of bokeh.
+
+
 == Usage Tutorial
 _tl;dr_ `from lmf_gui import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
 Then see `igs.model`, `igs.params`, `igs.fit`, `igs.set_model`, `igs.set_data`.
