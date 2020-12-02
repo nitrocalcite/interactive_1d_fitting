@@ -35,6 +35,11 @@ This enables:
 * Simple cross-platform remote use via port forwarding
 * Easy integration into Jupyter notebook and other web tools
 
+== Installation
+* `git clone https://github.com/nitrocalcite/interactive_1d_fitting`
+* `pip install -r requirements.txt`
+* Have fun!
+
 == Usage Tutorial
 _tl;dr_ `from lmf_gui import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
 Then see `igs.model`, `igs.params`, `igs.fit`, `igs.set_model`, `igs.set_data`.
