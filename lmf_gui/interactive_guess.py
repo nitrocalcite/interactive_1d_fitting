@@ -294,7 +294,7 @@ class InteractiveGuessSession:
                 # we didn't find the component (so it's probably None), so don't show any points
                 self._pdt_ds.data = dict(x=[[]], y=[[]])
             else:
-                x, y = component.to_poly_selector_shape(self._params)
+                x, y = component.to_poly_selector_shape((self._x.min(), self._x.max()), self._params)
                 self._pdt_ds.data = dict(x=[x], y=[y])
 
             for c, gr in self._comp_grs.items():

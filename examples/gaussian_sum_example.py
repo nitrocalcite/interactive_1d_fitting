@@ -10,8 +10,8 @@ y += (np.random.random(len(x)) - 0.5) / 5
 y += np.exp(-np.linspace(-1, 3, num=75 * 3) ** 2)
 
 # construct model that is sum of 4 Gaussians
-cm = IGaussianModel(prefix="g0_") + IGaussianModel(prefix="g1_") + IGaussianModel(prefix="g2_") + IGaussianModel(
-    prefix="bk_")
+cm = IGaussianModel(prefix="g0_") + IGaussianModel(prefix="g1_") + \
+     IGaussianModel(prefix="g2_") + IGaussianModel(prefix="bk_")
 
 # launch interactive guess session with this data & model
 igs = cm.interactive_guess(y, x)
