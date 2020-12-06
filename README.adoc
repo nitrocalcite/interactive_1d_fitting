@@ -38,6 +38,7 @@ This enables:
 == Installation
 * `git clone https://github.com/nitrocalcite/interactive_1d_fitting`
 * `pip install -r requirements.txt`
+* `pip install .`
 * Have fun!
 
 At the moment, you may want to install my patched version of bokeh (see the tutorial).
@@ -54,8 +55,8 @@ If you see `2.2.3`, you may not have properly uninstalled the earlier copy of bo
 
 
 == Usage Tutorial
-_tl;dr_ `from lmf_gui import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
-Then see `igs.model`, `igs.params`, `igs.fit`, `igs.set_model`, `igs.set_data`.
+_tl;dr_ `from lmf_gui.models import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
+Then see `igs.model`, `igs.params`, `igs.fit`, `igs.set_model`, `igs.set_data`, `igs.residuals`.
 
 This project extends lmfit's models with an `InteractiveModelMixin`.
 Interactive models have an `interactive_guess` method, which is the primary GUI entry point.

@@ -1,6 +1,7 @@
 from datetime import datetime
 from functools import partial
 
+import lmfit
 import numpy as np
 import panel as pn
 import bokeh.models as bm
@@ -145,6 +146,24 @@ class InteractiveGuessSession:
         def update_data(): self._data_ds.data = {'x': self._x, 'y': self._data}
 
         self._fig_change(update_data)
+
+    @classmethod
+    def from_modelresult(cls, mr: lmfit.model.ModelResult, independent_var='x', **kwargs):
+        """ Factory constructor to create an InteractiveGuessSession from a ModelResult
+
+        If the `ModelResult` has been serialized, you may not be able to drag the models on the graph.
+        This is because `ModelResult` will serialize its model as a generic Models, not the Interactive components.
+
+        Args:
+            mr: the `ModelResult` to open interactively
+            independent_var: the name of the independent variable to be used for plotting.
+                if None or not found, will number the data sequentially
+            **kwargs: override any parameters you wish to be passed to `__init__`
+        """
+        x = mr.userkws.get(independent_var, None) if independent_var is not None else None
+        args = dict(model=mr.model, data=mr.data, x=x)
+        args.update(kwargs)
+        return cls(**args)
 
     def __init__(self, model, data, params=None, x=None, plot_xs=None):
         """ Allows 1D models to be fit interactively
