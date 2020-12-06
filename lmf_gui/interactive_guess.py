@@ -161,7 +161,7 @@ class InteractiveGuessSession:
             **kwargs: override any parameters you wish to be passed to `__init__`
         """
         x = mr.userkws.get(independent_var, None) if independent_var is not None else None
-        args = dict(model=mr.model, data=mr.data, x=x)
+        args = dict(model=mr.model, data=mr.data, params=mr.params, x=x)
         args.update(kwargs)
         return cls(**args)
 
