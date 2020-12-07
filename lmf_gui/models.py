@@ -100,7 +100,7 @@ class InteractiveDistributionMixin(InteractiveModelMixin):
         scale = np.clip((ticks / 700) + 1, 0.5, 2)
         vals['sigma'] *= scale
         vals['amplitude'] *= scale  # don't change peak value
-        return self.make_params(vals)
+        return self.make_params(**vals)
 
     def _to_poly_selector_shape(self, x_range, vals):
         c = vals['center']
