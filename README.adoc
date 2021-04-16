@@ -55,7 +55,7 @@ If you see `2.2.3`, you may not have properly uninstalled the earlier copy of bo
 
 
 == Usage Tutorial
-_tl;dr_ `from lmf_gui.models import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
+_tl;dr_ `from ivfit.models import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
 Then see `igs.model`, `igs.params`, `igs.fit`, `igs.set_model`, `igs.set_data`, `igs.residuals`.
 
 This project extends lmfit's models with an `InteractiveModelMixin`.
@@ -67,10 +67,11 @@ Let's say you run the provided `gaussian_sum_example.py` by doing:
 from examples.gaussian_sum_example import *
 
 Here's the script:
-[source, Python]
+
+[source,Python]
 ----
 import numpy as np
-from lmf_gui.models import IGaussianModel
+from ivfit.models import IGaussianModel
 
 # construct data - 3 gaussian peaks with noise, against a broad gaussian background
 x = np.linspace(-4, 4, num=75)
@@ -146,7 +147,7 @@ Among other things this object contains the model, initial parameters, best gues
 
 You can save or load these objects:
 [source, Python]
-from lmf_gui import load, save
+from ivfit import load, save
 result = save(igs.fit, "fit.json")
 result = load("ModelResult", "fit.json")
 
@@ -186,7 +187,7 @@ If you are not familiar, their https://lmfit.github.io/lmfit-py/model.html[docum
 
 === Potential Concerns
 How do components know how to draw themselves?  What if I use my existing components?::
-Each model component is responsible for implementing its own draggable graph interface (see `lmf_gui.models`).
+Each model component is responsible for implementing its own draggable graph interface (see `ivfit.models`).
 If your model contains non-interactive model components, such as those from lmfit, you will not be able to use the graph editing feature.
 However, the rest of the interactive features will work fine.
 
