@@ -12,7 +12,7 @@ maintainers = [
     "Jonathan Okasinski <jo328@cornell.edu>",
 ]
 packages = [
-    { include = "lmf_gui" }
+    { include = "ivfit" }
 ]
 
 [tool.dephell.main]

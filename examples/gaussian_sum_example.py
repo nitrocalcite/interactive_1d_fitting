@@ -1,5 +1,5 @@
 import numpy as np
-from lmf_gui.models import IGaussianModel
+from ivfit.models import IGaussianModel
 
 # construct data - 3 gaussian peaks with noise, against a broad gaussian background
 x = np.linspace(-4, 4, num=75)
