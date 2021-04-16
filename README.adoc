@@ -1,5 +1,4 @@
-= Prototype Interactive 1D Fitting
-Jonathan Okasinski
+= Interactive, Visual Fitting
 
 This project's aim is to improve the ergonomics and speed of 1D curve fitting by accelerating common fitting tasks with minimal change to existing workflows.
 This is accomplished via interactive viewing of fits and selection of initial parameters.
@@ -36,10 +35,14 @@ This enables:
 * Easy integration into Jupyter notebook and other web tools
 
 == Installation
+
+To build the package locally for development:
+
 * `git clone https://github.com/nitrocalcite/interactive_1d_fitting`
-* `pip install -r requirements.txt`
-* `pip install .`
+* `poetry install`
 * Have fun!
+
+Note that we use https://python-poetry.org/docs/[Poetry] to manage dependencies and publication.
 
 At the moment, you may want to install my patched version of bokeh (see the tutorial).
 To do that:
