@@ -193,4 +193,7 @@ However, the rest of the interactive features will work fine.
 
 
 == Licensing
-This code has been authored by Jonathan Okasinski and is made available under the terms of the GNU GPLv3 license.
+
+IVFit is licensed under the https://github.com/nitrocalcite/ivfit/blob/main/LICENSE[Apache License 2.0].
+
+Copyright 2020 Jonathan Okasinski
