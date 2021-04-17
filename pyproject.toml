@@ -3,12 +3,12 @@ name = "ivfit"
 version = "0.1.0"
 description = "Interactive, visual, fitting toolkit"
 authors = [
-    "Jonathan Okasinski <jo328@cornell.edu>",
+    "Jonathan Okasinski <jonathan.okasinski@gmail.com>",
 ]
 keywords = ["curve-fitting", "least-squares-minimization", "visualization"]
 license = "Apache-2.0"
 maintainers = [
-    "Jonathan Okasinski <jo328@cornell.edu>",
+    "Jonathan Okasinski <jonathan.okasinski@gmail.com>",
 ]
 packages = [
     { include = "ivfit" }
