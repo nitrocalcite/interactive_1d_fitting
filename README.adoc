@@ -38,11 +38,14 @@ This enables:
 
 To build the package locally for development:
 
-* `git clone https://github.com/nitrocalcite/interactive_1d_fitting`
-* `poetry install`
+* `git clone https://github.com/nitrocalcite/ivfit`
+* `cd ivfit`
+* `make install`
 * Have fun!
 
-Note that we use https://python-poetry.org/docs/[Poetry] to manage dependencies and publication.
+This method uses https://python-poetry.org/docs/[Poetry] to manage dependencies and publication. Locked dependencies are also available directly to `pip` from `requirements.lock`, to support installing without Poetry:
+
+* `pip install -r requirements.lock`
 
 == Usage Tutorial
 _tl;dr_ `from ivfit.models import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
