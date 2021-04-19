@@ -1,5 +1,4 @@
-= Prototype Interactive 1D Fitting
-Jonathan Okasinski
+= Interactive, Visual Fitting
 
 This project's aim is to improve the ergonomics and speed of 1D curve fitting by accelerating common fitting tasks with minimal change to existing workflows.
 This is accomplished via interactive viewing of fits and selection of initial parameters.
@@ -36,23 +35,14 @@ This enables:
 * Easy integration into Jupyter notebook and other web tools
 
 == Installation
+
+To build the package locally for development:
+
 * `git clone https://github.com/nitrocalcite/interactive_1d_fitting`
-* `pip install -r requirements.txt`
-* `pip install .`
+* `poetry install`
 * Have fun!
 
-At the moment, you may want to install my patched version of bokeh (see the tutorial).
-To do that:
-
-* `pip uninstall bokeh`
-* `git clone https://github.com/nitrocalcite/bokeh`
-* `git checkout --track origin/polyedit_patch_2.2`
-* `python setup.py develop`
-* When prompted, chose `2` to install the prebuilt BokehJS I've bundled in that branch.  footnote:[This is why the repo is so large, but means that you don't need to install the entire node-based JS build stack yourself]
-* Check to see if it worked by running `import bokeh; print(bokeh.+++__version__+++)`
-You should see something like `2.2.3-2-g29604b135-dirty`, _not_ `2.2.3`.
-If you see `2.2.3`, you may not have properly uninstalled the earlier copy of bokeh.
-
+Note that we use https://python-poetry.org/docs/[Poetry] to manage dependencies and publication.
 
 == Usage Tutorial
 _tl;dr_ `from ivfit.models import IGaussianModel; igs = IGaussianModel().interactive_guess(y, x)`
@@ -124,12 +114,6 @@ Activate Bokeh's PolyEditTool (graph toolbar, triangle icon).
 Double click on the line that appears, then drag the vertices.
 Dragging these handles will change the shape of the model component.
 
-[WARNING]
-.You may need a special version of Bokeh for the graph editing
-There's currently a https://github.com/bokeh/bokeh/issues/10670[bug in Bokeh] that causes the graph editing to break.
-After performing one drag, you'll have to double click the line before dragging again.
-A patch is available if you install Bokeh from https://github.com/nitrocalcite/bokeh[my fork]
-
 All these methods are fully equivalent and kept in sync with each other at all times.
 
 Now that you have established an initial guess, you can perform a fit by:
@@ -194,4 +178,7 @@ However, the rest of the interactive features will work fine.
 
 
 == Licensing
-This code has been authored by Jonathan Okasinski and is made available under the terms of the GNU GPLv3 license.
+
+IVFit is licensed under the https://github.com/nitrocalcite/ivfit/blob/main/LICENSE[Apache License 2.0].
+
+Copyright 2020 Jonathan Okasinski

@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "ivfit"
+version = "0.1.0"
+description = "Interactive, visual, fitting toolkit"
+authors = [
+    "Jonathan Okasinski <jonathan.okasinski@gmail.com>",
+]
+keywords = ["curve-fitting", "least-squares-minimization", "visualization"]
+license = "Apache-2.0"
+maintainers = [
+    "Jonathan Okasinski <jonathan.okasinski@gmail.com>",
+]
+packages = [
+    { include = "ivfit" }
+]
+
+[tool.dephell.main]
+from = {format = "poetry", path = "pyproject.toml"}
+to = {format = "setuppy", path = "setup.py"}
+
+[tool.poetry.dependencies]
+bokeh = "^2.3.1"
+lmfit = "^1.0.2"
+panel = "^0.11.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
